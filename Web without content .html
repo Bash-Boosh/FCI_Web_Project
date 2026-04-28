@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+  body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #e8f0fe 0%, #f5f8ff 60%, #dce8fb 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(90deg, #003d7a 0%, #005ec4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 1000;
+      box-shadow: 0 3px 16px rgba(0,62,150,0.22);
+    }
+
+    .logo-image {
+      width: 150px;
+      height: 62px;
+      object-fit: contain;
+    }
+
+    .search-bar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 0 30px;
+    }
+
+    .search-bar input {
+      width: 42%;
+      padding: 9px 18px;
+      border-radius: 25px;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.2s, background 0.2s;
+    }
+
+    .search-bar input::placeholder { color: rgba(255,255,255,0.65); }
+    .search-bar input:focus {
+      border-color: #fff;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .nav-links { display: flex; gap: 10px; }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 20px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      transition: background 0.2s;
+    }
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+
+    #menu-toggle { display: none; }
+    .menu-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 46px;
+      height: 46px;
+      background: #003d7a;
+      color: white;
+      font-size: 22px;
+      position: fixed;
+      top: 90px;
+      left: 0;
+      z-index: 900;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+      transition: left 0.32s ease, background 0.2s;
+      user-select: none;
+    }
+    .menu-icon:hover { background: #005ec4; }
+    #menu-toggle:checked ~ .menu-icon { left: 240px; }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -240px;
+      width: 240px;
+      height: 100%;
+      background: linear-gradient(180deg, #002f6c 0%, #004aab 100%);
+      transition: left 0.32s ease;
+      padding-top: 80px;
+      z-index: 800;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+    }
+    #menu-toggle:checked ~ .sidebar { left: 0; }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .sidebar-title { color: #fff; font-size: 15px; font-weight: 600; }
+    .close-btn {
+      display: block;
+      color: rgba(255,255,255,0.8);
+      font-size: 20px;
+      cursor: pointer;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    .close-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    .sidebar a {
+      display: block;
+      padding: 13px 24px;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.1);
+      border-left-color: #7eb8ff;
+      color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <img class="logo-image"
+      src="C:/Users/peter/OneDrive/Desktop/Copilot_20260427_191129.png"
+      alt="spekzone logo"/>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">🏠 Home</a>
+      <a href="#category">💻 category</a>
+      <a href="#cart">🛒 Cart</a>
+      <a href="#about">ℹ️ About</a>
+      <a href="#contact">📞 Contact</a>
+      <a href="#profile">👤 profile</a>
+    </nav>
+  </div>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">Menu</span>
+      <label for="menu-toggle" class="close-btn">✕</label>
+    </div>
+    <a href="#home">🏠 Home</a>
+        <a href="#category">💻 category</a>
+        <a href="#performance">📉 Performance</a>
+        <a href="#cart">🛒 Cart</a>
+        <a href="#about us">ℹ️ About us</a>
+        <a href="#contact">📞 Contact</a>
+        <a href="#logout">➜] log out</a>
+  </div>
+
+       
+</body>
+</html>
