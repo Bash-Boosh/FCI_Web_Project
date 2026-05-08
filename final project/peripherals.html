@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spec Zone - Peripherals</title>
+  <title>Spec Zone - Accessories</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -15,7 +16,7 @@
       <a href="index.html">Home</a>
       <a href="laptops.html">Laptops</a>
       <a href="peripherals.html">Accessories</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">Cart <span class="cart-count">0</span></a>
       <a href="profile.html">Profile</a>
       <a href="login.html">Login</a>
     </nav>
@@ -24,62 +25,145 @@
   <main>
     <div class="page-head">
       <h1>Accessories</h1>
-      <p>Keyboards and mice for your setup.</p>
+      <p>Complete your setup with keyboards, mice, headsets, monitors, and desk essentials.</p>
     </div>
 
-    <h2 class="title">Keyboards</h2>
+    <div class="shop-tools">
+      <input type="search" id="product-search" placeholder="Search accessory name or feature">
+      <select id="category-filter">
+        <option value="all">All Accessories</option>
+        <option value="keyboard">Keyboards</option>
+        <option value="mouse">Mice</option>
+        <option value="headset">Headsets</option>
+        <option value="monitor">Monitors</option>
+      </select>
+    </div>
+
     <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80" alt="Keyboard">
+      <div class="product" data-category="keyboard">
+        <div class="product-image"><span class="badge-text">Keyboard</span><img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=700&q=80" alt="Keyboard"></div>
         <h3>Keychron Q1 Pro</h3>
         <p>Wireless mechanical keyboard</p>
+        <div class="product-meta"><span>Wireless</span><span>Hot Swap</span></div>
         <strong>EGP 6,500</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=80" alt="RGB keyboard">
+
+      <div class="product" data-category="keyboard">
+        <div class="product-image"><span class="badge-text">Keyboard</span><img src="https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?auto=format&fit=crop&w=700&q=80" alt="RGB keyboard"></div>
         <h3>HyperX Alloy Origins</h3>
         <p>RGB gaming keyboard</p>
+        <div class="product-meta"><span>RGB</span><span>Metal Body</span></div>
         <strong>EGP 3,200</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=700&q=80" alt="White keyboard">
+
+      <div class="product" data-category="keyboard">
+        <div class="product-image"><span class="badge-text">Keyboard</span><img src="https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=700&q=80" alt="White keyboard"></div>
         <h3>Royal Kludge RK84</h3>
         <p>Simple wireless keyboard</p>
+        <div class="product-meta"><span>75%</span><span>Wireless</span></div>
         <strong>EGP 2,400</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
-    </div>
 
-    <h2 class="title">Mice</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=700&q=80" alt="Gaming mouse">
+      <div class="product" data-category="keyboard">
+        <div class="product-image"><span class="badge-text">Keyboard</span><img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?auto=format&fit=crop&w=700&q=80" alt="Gaming keyboard"></div>
+        <h3>SteelSeries Apex Pro</h3>
+        <p>Adjustable switches gaming keyboard</p>
+        <div class="product-meta"><span>Pro</span><span>Fast</span></div>
+        <strong>EGP 7,800</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="mouse">
+        <div class="product-image"><span class="badge-text">Mouse</span><img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=700&q=80" alt="Gaming mouse"></div>
         <h3>Logitech G Pro X</h3>
         <p>Light wireless gaming mouse</p>
+        <div class="product-meta"><span>Wireless</span><span>Superlight</span></div>
         <strong>EGP 4,200</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=80" alt="Black mouse">
+
+      <div class="product" data-category="mouse">
+        <div class="product-image"><span class="badge-text">Mouse</span><img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=700&q=80" alt="Black mouse"></div>
         <h3>Razer DeathAdder V3</h3>
         <p>Comfortable gaming mouse</p>
+        <div class="product-meta"><span>Ergonomic</span><span>Fast Sensor</span></div>
         <strong>EGP 2,800</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1629429407759-01cd3d7cfb38?auto=format&fit=crop&w=700&q=80" alt="Mouse on desk">
+
+      <div class="product" data-category="mouse">
+        <div class="product-image"><span class="badge-text">Mouse</span><img src="https://images.unsplash.com/photo-1629429407759-01cd3d7cfb38?auto=format&fit=crop&w=700&q=80" alt="Mouse on desk"></div>
         <h3>HyperX Pulsefire Haste 2</h3>
         <p>Fast and simple wired mouse</p>
+        <div class="product-meta"><span>Wired</span><span>Lightweight</span></div>
         <strong>EGP 1,800</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="mouse">
+        <div class="product-image"><span class="badge-text">Mouse</span><img src="https://images.unsplash.com/photo-1605773527852-c546a8584ea3?auto=format&fit=crop&w=700&q=80" alt="Gaming mouse pad and mouse"></div>
+        <h3>Zowie EC2-C</h3>
+        <p>Esports mouse for FPS games</p>
+        <div class="product-meta"><span>FPS</span><span>Esports</span></div>
+        <strong>EGP 2,100</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="headset">
+        <div class="product-image"><span class="badge-text">Headset</span><img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=700&q=80" alt="Gaming headset"></div>
+        <h3>HyperX Cloud III</h3>
+        <p>Comfortable wired gaming headset</p>
+        <div class="product-meta"><span>Clear Mic</span><span>Comfort</span></div>
+        <strong>EGP 3,500</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="headset">
+        <div class="product-image"><span class="badge-text">Headset</span><img src="https://images.unsplash.com/photo-1599669454699-248893623440?auto=format&fit=crop&w=700&q=80" alt="Black gaming headset"></div>
+        <h3>Razer BlackShark V2</h3>
+        <p>Surround sound esports headset</p>
+        <div class="product-meta"><span>Surround</span><span>Esports</span></div>
+        <strong>EGP 4,100</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="monitor">
+        <div class="product-image"><span class="badge-text">Monitor</span><img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=700&q=80" alt="Gaming monitor"></div>
+        <h3>LG UltraGear 24GQ50F</h3>
+        <p>24 inch gaming monitor - 165Hz</p>
+        <div class="product-meta"><span>165Hz</span><span>Gaming</span></div>
+        <strong>EGP 8,900</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="monitor">
+        <div class="product-image"><span class="badge-text">Monitor</span><img src="https://images.unsplash.com/photo-1585792180666-f7347c490ee2?auto=format&fit=crop&w=700&q=80" alt="Monitor setup"></div>
+        <h3>Samsung Odyssey G5</h3>
+        <p>27 inch curved gaming monitor</p>
+        <div class="product-meta"><span>Curved</span><span>144Hz</span></div>
+        <strong>EGP 12,500</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Spec Zone. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Spec Zone is a simple store for laptops, keyboards, mice, and gaming setup accessories.</p>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>Phone: 0100 123 4567</p>
+        <p>Phone: 0112 345 6789</p>
+        <p>Email: speczone@gmail.com</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Spec Zone. All rights reserved.</p>
   </footer>
 </body>
 </html>

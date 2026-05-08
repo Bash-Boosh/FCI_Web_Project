@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Spec Zone - Cart</title>
+  <title>Spec Zone - Register</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -22,21 +22,21 @@
   </header>
 
   <main>
-    <div class="page-head">
-      <h1>Cart</h1>
-      <p>Your selected products will appear here.</p>
-    </div>
+    <div class="form-box">
+      <h1>Register</h1>
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your name">
 
-    <div class="cart-page">
-      <div class="cart-items" id="cart-items"></div>
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
 
-      <div class="cart-summary">
-        <h2>Order Summary</h2>
-        <p>Products: <span id="summary-count">0</span></p>
-        <p>Total: <strong id="summary-total">EGP 0</strong></p>
-        <button id="checkout-btn" type="button">Checkout</button>
-        <button id="clear-cart" class="dark-button" type="button">Clear Cart</button>
-      </div>
+        <label>Password</label>
+        <input type="password" placeholder="Password">
+
+        <button type="submit">Register</button>
+      </form>
+      <p class="account-link">Already have an account? <a href="login.html">Login</a></p>
     </div>
   </main>
 

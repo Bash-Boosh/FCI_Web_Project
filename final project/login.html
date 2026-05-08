@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Spec Zone - Login</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -14,7 +15,7 @@
       <a href="index.html">Home</a>
       <a href="laptops.html">Laptops</a>
       <a href="peripherals.html">Peripherals</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">Cart <span class="cart-count">0</span></a>
       <a href="profile.html">Profile</a>
       <a href="login.html">Login</a>
     </nav>
@@ -32,27 +33,24 @@
 
         <button type="submit">Login</button>
       </form>
-    </div>
-
-    <div class="form-box">
-      <h1>Register</h1>
-      <form>
-        <label>Name</label>
-        <input type="text" placeholder="Your name">
-
-        <label>Email</label>
-        <input type="email" placeholder="you@email.com">
-
-        <label>Password</label>
-        <input type="password" placeholder="Password">
-
-        <button type="submit">Register</button>
-      </form>
+      <p class="account-link">Not a user? <a href="register.html">Register</a></p>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Spec Zone. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Spec Zone is a simple store for laptops, keyboards, mice, and gaming setup accessories.</p>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>Phone: 0100 123 4567</p>
+        <p>Phone: 0112 345 6789</p>
+        <p>Email: speczone@gmail.com</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Spec Zone. All rights reserved.</p>
   </footer>
 </body>
 </html>

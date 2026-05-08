@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Spec Zone - Profile</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -13,8 +14,8 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="laptops.html">Laptops</a>
-      <a href="peripherals.html">Peripherals</a>
-      <a href="cart.html">Cart</a>
+      <a href="peripherals.html">Accessories</a>
+      <a href="cart.html">Cart <span class="cart-count">0</span></a>
       <a href="profile.html">Profile</a>
       <a href="login.html">Login</a>
     </nav>
@@ -26,28 +27,68 @@
       <p>Save basic information for your next order.</p>
     </div>
 
-    <div class="form-box">
-      <form>
-        <label>Name</label>
-        <input type="text" placeholder="Your name">
+    <div class="profile-box">
+      <div class="profile-top">
+        <div class="profile-avatar">PZ</div>
+        <div>
+          <h2>peter zakaria</h2>
+          <p>Spec Zone customer account</p>
+        </div>
+      </div>
 
-        <label>Favorite Category</label>
-        <select>
-          <option>Laptops</option>
-          <option>Keyboards</option>
-          <option>Mice</option>
-        </select>
+      <div class="profile-info">
+        <div>
+          <span>Email</span>
+          <p>peter.zakaria.ha@email.com</p>
+        </div>
+        <div>
+          <span>Phone</span>
+          <p>0127 224 7241</p>
+        </div>
+        <div>
+          <span>Address</span>
+          <p>Cairo, Egypt</p>
+        </div>
+        <div>
+          <span>Account Status</span>
+          <p>Active</p>
+        </div>
+      </div>
 
-        <label>Budget</label>
-        <input type="text" placeholder="Example: EGP 40,000">
+      <div class="profile-section">
+        <h3>Shopping Preferences</h3>
+        <p><b>Favorite Category:</b> Gaming Laptops</p>
+        <p><b>Budget:</b> EGP 40,000</p>
+        <p><b>Preferred Brands:</b> ASUS, Lenovo, Logitech</p>
+      </div>
 
-        <button type="submit">Save</button>
-      </form>
+      <div class="profile-section">
+        <h3>Last Order</h3>
+        <p><b>Product:</b> ASUS ROG Strix G16</p>
+        <p><b>Status:</b> Waiting for confirmation</p>
+      </div>
+
+      <div class="profile-actions">
+        <a class="button" href="laptops.html">Shop Now</a>
+        <a class="button second" href="login.html">Edit Profile</a>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Spec Zone. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Spec Zone is a simple store for laptops, keyboards, mice, and gaming setup accessories.</p>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>Phone: 0112 905 5200</p>
+        <p>Phone: 0127 224 7241</p>
+        <p>Email: speczone@gmail.com</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Spec Zone. All rights reserved.</p>
   </footer>
 </body>
 </html>

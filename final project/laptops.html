@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Spec Zone - Laptops</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -14,7 +15,7 @@
       <a href="index.html">Home</a>
       <a href="laptops.html">Laptops</a>
       <a href="peripherals.html">Accessories</a>
-      <a href="cart.html">Cart</a>
+      <a href="cart.html">Cart <span class="cart-count">0</span></a>
       <a href="profile.html">Profile</a>
       <a href="login.html">Login</a>
     </nav>
@@ -23,62 +24,145 @@
   <main>
     <div class="page-head">
       <h1>Laptops</h1>
-      <p>Choose a laptop for gaming, study, or work.</p>
+      <p>Choose a laptop for gaming, study, editing, business, or premium daily use.</p>
+    </div>
+
+    <div class="shop-tools">
+      <input type="search" id="product-search" placeholder="Search laptop name or specs">
+      <select id="category-filter">
+        <option value="all">All Laptops</option>
+        <option value="gaming">Gaming</option>
+        <option value="creator">Creator</option>
+        <option value="student">Student</option>
+        <option value="premium">Premium</option>
+      </select>
     </div>
 
     <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=700&q=80" alt="ASUS laptop">
+      <div class="product" data-category="gaming">
+        <div class="product-image"><span class="badge-text">Gaming</span><img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=700&q=80" alt="ASUS laptop"></div>
         <h3>ASUS ROG Strix G16</h3>
         <p>Intel i7 - RTX 4060 - 16GB RAM</p>
+        <div class="product-meta"><span>165Hz</span><span>Best Seller</span></div>
         <strong>EGP 45,000</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Lenovo laptop">
+      <div class="product" data-category="gaming">
+        <div class="product-image"><span class="badge-text">Gaming</span><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=700&q=80" alt="Lenovo laptop"></div>
         <h3>Lenovo LOQ 15</h3>
         <p>Ryzen 7 - RTX 4050 - 16GB RAM</p>
+        <div class="product-meta"><span>144Hz</span><span>Value Pick</span></div>
         <strong>EGP 38,500</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="HP laptop">
+      <div class="product" data-category="creator">
+        <div class="product-image"><span class="badge-text">Creator</span><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="HP laptop"></div>
         <h3>HP OMEN 16</h3>
         <p>Intel i7 - RTX 4070 - 1TB SSD</p>
+        <div class="product-meta"><span>RTX 4070</span><span>Powerful</span></div>
         <strong>EGP 52,000</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=700&q=80" alt="Dell laptop">
+      <div class="product" data-category="premium">
+        <div class="product-image"><span class="badge-text">Premium</span><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=700&q=80" alt="Dell laptop"></div>
         <h3>Dell XPS 15</h3>
         <p>OLED screen - 16GB RAM - Premium design</p>
+        <div class="product-meta"><span>OLED</span><span>Elegant</span></div>
         <strong>EGP 62,000</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=700&q=80" alt="Acer laptop">
+      <div class="product" data-category="student">
+        <div class="product-image"><span class="badge-text">Student</span><img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=700&q=80" alt="Acer laptop"></div>
         <h3>Acer Nitro V 15</h3>
-        <p>Good budget gaming laptop</p>
+        <p>Budget gaming laptop - RTX 3050</p>
+        <div class="product-meta"><span>Budget</span><span>Good Start</span></div>
         <strong>EGP 28,000</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
 
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=700&q=80" alt="MacBook">
+      <div class="product" data-category="premium">
+        <div class="product-image"><span class="badge-text">Premium</span><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=700&q=80" alt="MacBook"></div>
         <h3>MacBook Air M3</h3>
         <p>Light laptop with long battery life</p>
+        <div class="product-meta"><span>Silent</span><span>All Day</span></div>
         <strong>EGP 70,000</strong>
-        <a class="small-button" href="cart.html">Add to Cart</a>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="gaming">
+        <div class="product-image"><span class="badge-text">Gaming</span><img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=700&q=80" alt="MSI laptop"></div>
+        <h3>MSI Thin 15</h3>
+        <p>Intel i5 - RTX 4050 - 512GB SSD</p>
+        <div class="product-meta"><span>Light</span><span>Gaming</span></div>
+        <strong>EGP 32,000</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="student">
+        <div class="product-image"><span class="badge-text">Student</span><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=700&q=80" alt="Lenovo IdeaPad laptop"></div>
+        <h3>Lenovo IdeaPad Gaming 3</h3>
+        <p>Ryzen 5 - GTX 1650 - 8GB RAM</p>
+        <div class="product-meta"><span>Entry</span><span>Reliable</span></div>
+        <strong>EGP 25,500</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="creator">
+        <div class="product-image"><span class="badge-text">Creator</span><img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=700&q=80" alt="ASUS creator laptop"></div>
+        <h3>ASUS Zenbook 14 OLED</h3>
+        <p>OLED display - Core Ultra 7 - 1TB SSD</p>
+        <div class="product-meta"><span>OLED</span><span>Creator</span></div>
+        <strong>EGP 48,000</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="gaming">
+        <div class="product-image"><span class="badge-text">Gaming</span><img src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?auto=format&fit=crop&w=700&q=80" alt="ASUS TUF laptop"></div>
+        <h3>ASUS TUF A15</h3>
+        <p>Ryzen 7 - RTX 4060 - Military grade build</p>
+        <div class="product-meta"><span>Tough</span><span>144Hz</span></div>
+        <strong>EGP 36,000</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="premium">
+        <div class="product-image"><span class="badge-text">Premium</span><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=700&q=80" alt="Surface laptop"></div>
+        <h3>Microsoft Surface Laptop 5</h3>
+        <p>Touch display - Slim body - Office ready</p>
+        <div class="product-meta"><span>Touch</span><span>Business</span></div>
+        <strong>EGP 58,000</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
+      </div>
+
+      <div class="product" data-category="creator">
+        <div class="product-image"><span class="badge-text">Creator</span><img src="https://images.unsplash.com/photo-1504707748692-419802cf939d?auto=format&fit=crop&w=700&q=80" alt="Gigabyte laptop"></div>
+        <h3>Gigabyte Aero 16</h3>
+        <p>RTX 4060 - 4K display - Creator laptop</p>
+        <div class="product-meta"><span>4K</span><span>Studio</span></div>
+        <strong>EGP 66,000</strong>
+        <a class="small-button add-to-cart" href="cart.html">Add to Cart</a>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 Spec Zone. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <h3>About Us</h3>
+        <p>Spec Zone is a simple store for laptops, keyboards, mice, and gaming setup accessories.</p>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>Phone: 0100 123 4567</p>
+        <p>Phone: 0112 345 6789</p>
+        <p>Email: speczone@gmail.com</p>
+      </div>
+    </div>
+    <p class="copy">© 2026 Spec Zone. All rights reserved.</p>
   </footer>
 </body>
 </html>
